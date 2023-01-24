@@ -1,3 +1,4 @@
+import datetime
 import time
 
 from pyquery import PyQuery
@@ -15,13 +16,13 @@ while True:
                 engine.runAndWait()
             if i.text != "-select-":
                 print(i.text)
-        print("-------------")
+        print(f"{datetime.datetime.now()}-------------")
         time.sleep(3)
     except:
         pass
 
     try:
-        # 其实hax的可抢可不抢，虽然是kvm架构，但是速度和性能相比best差了一大截
+        # 其实hax的可抢可不抢，虽然是kvm架构，但是速度和性能相比best差了一大截(
         doc = PyQuery(url="https://hax.co.id/create-vps/")
         for i in doc.find("#datacenter").children():
             if "eu-1" in i.text.lower():
@@ -30,7 +31,7 @@ while True:
                 engine.runAndWait()
             if i.text != "-select-":
                 print(i.text)
-        print("-------------")
+        print(f"{datetime.datetime.now()}-------------")
         time.sleep(3)
     except:
         pass
